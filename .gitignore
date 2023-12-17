@@ -97,6 +97,11 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.sln
+*.vcxproj*
+*.qtvscr
+*.stash
+
 
 # Chutzpah Test files
 _Chutzpah*
@@ -396,3 +401,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+## QT 
+
+## Others
+[Bb]uild
