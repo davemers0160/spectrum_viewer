@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>484</width>
-    <height>525</height>
+    <width>1300</width>
+    <height>870</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -27,146 +27,49 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>530</width>
-    <height>525</height>
+    <width>10000</width>
+    <height>10000</height>
    </size>
   </property>
   <property name="font">
    <font>
-    <pointsize>11</pointsize>
-    <weight>75</weight>
-    <bold>true</bold>
+    <pointsize>8</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
    </font>
   </property>
   <property name="windowTitle">
-   <string>SEM Analysis Software</string>
+   <string>Spectrum Viewer</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="applyButton">
-    <property name="geometry">
-     <rect>
-      <x>73</x>
-      <y>323</y>
-      <width>139</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>139</width>
-      <height>28</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Apply Alignment</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="binarizeButton">
-    <property name="geometry">
-     <rect>
-      <x>73</x>
-      <y>359</y>
-      <width>139</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>139</width>
-      <height>28</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Binarize Images</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="findButton">
-    <property name="geometry">
-     <rect>
-      <x>73</x>
-      <y>395</y>
-      <width>139</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>139</width>
-      <height>28</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Find ...</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="reportButton">
-    <property name="geometry">
-     <rect>
-      <x>73</x>
-      <y>431</y>
-      <width>139</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>139</width>
-      <height>28</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Report</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>484</width>
-     <height>26</height>
+     <width>1300</width>
+     <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <widget class="QMenu" name="menu_File">
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="title">
      <string>&amp;File </string>
     </property>
-    <addaction name="action_Image_Directory_Location"/>
+    <addaction name="actionOpen_File"/>
    </widget>
    <addaction name="menu_File"/>
   </widget>
@@ -198,6 +101,11 @@
   <action name="action_Search_Settings">
    <property name="text">
     <string>Search Settings</string>
+   </property>
+  </action>
+  <action name="actionOpen_File">
+   <property name="text">
+    <string>Open File</string>
    </property>
   </action>
  </widget>

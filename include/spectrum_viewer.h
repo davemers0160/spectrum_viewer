@@ -9,7 +9,9 @@
 #include <cstdint>
 #include <vector>
 #include <string>
-//#include "utils.h"
+#include "utilities.h"
+#include "input_source.h"
+
 //#include "binary_params.h"
 //#include "search_settings.h"
 //#include "tile_img.h"
@@ -42,11 +44,15 @@ private:
 	uint8_t struct_elem_size = 5;
 	uint16_t binary_threshold = 120;
 
-	double corebox_area;
 	bool files_parsed = false;
 	bool display_all_cells = false;
 	int32_t offset = 0;
 
+	float full_scale = 2048.0f;
+
+	std::unique_ptr<data_samples_impl> samples;
+
+	input_source input_source_ptr;
 
 
 	//Methods
@@ -54,6 +60,7 @@ private:
 
 private slots:
 	//void on_action_Image_Directory_Location();
+	void file_select_clicked();
 
 };
 
