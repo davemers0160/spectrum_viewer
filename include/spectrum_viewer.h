@@ -49,6 +49,7 @@ private:
 	int32_t offset = 0;
 
 	float full_scale = 2048.0f;
+	uint32_t fft_size = 4096;
 
 	std::unique_ptr<data_samples_impl> samples;
 
@@ -61,6 +62,8 @@ private:
 private slots:
 	//void on_action_Image_Directory_Location();
 	void file_select_clicked();
+	void update_fft_size();
+	void update_full_scale();
 
 };
 

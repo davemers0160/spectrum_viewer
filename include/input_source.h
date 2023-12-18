@@ -72,23 +72,23 @@ public:
     }
     
     //-----------------------------------------------------------------------------
-    //std::unique_ptr<std::complex<float>> get_samples(int64_t start, int64_t length)
-    //{
+    std::unique_ptr<std::complex<float>> get_samples(int64_t start, int64_t length)
+    {
 
-    //    if (sample_data == nullptr)
-    //        return nullptr;
+        if (sample_data == nullptr)
+            return nullptr;
 
-    //    if (start < 0 || length < 0)
-    //        return nullptr;
+        if (start < 0 || length < 0)
+            return nullptr;
 
-    //    if (start + length > sample_count)
-    //        return nullptr;
+        if (start + length > sample_count)
+            return nullptr;
 
-    //    auto dest = std::make_unique<std::complex<float>>(length);
-    //    samples->copy_range(sample_data, start, length, dest.get());
+        auto dest = std::make_unique<std::complex<float>>(length);
+        samples->copy_range(sample_data, start, length, dest.get());
 
-    //    return dest;
-    //}
+        return dest;
+    }
 
     //-----------------------------------------------------------------------------
     uint64_t get_sample_count() { return sample_count; }

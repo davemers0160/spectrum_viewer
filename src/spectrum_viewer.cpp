@@ -19,10 +19,7 @@
 //#include <qtimer.h>
 
 #include "utilities.h"
-// #include "utils.h"
-// #include "display.h"
-// #include "html_tags.h"
-// #include "search_settings.h"
+
 
 
 // void Debug_Console()
@@ -53,8 +50,17 @@ spectrum_viewer::spectrum_viewer(QWidget* parent)
     
     //this->connect(ui->actionOpen_File, SIGNAL(triggered()), this, SLOT(file_select_clicked()));
 
+    fft_size = pow(2, ui->fft_size_slider->value());
+    ui->fft_size_le->setText(QString::number(fft_size));
 
+    full_scale = pow(2, ui->full_scale_slider->value());
+    ui->full_scale_le->setText(QString::number(full_scale));
+
+
+    //-----------------------------------------------------------------------------
     connect(ui->actionOpen_File, SIGNAL(triggered()), this, SLOT(file_select_clicked()));
+    connect(ui->fft_size_slider, SIGNAL(valueChanged(int)), this, SLOT(update_fft_size()));
+    connect(ui->full_scale_slider, SIGNAL(valueChanged(int)), this, SLOT(update_full_scale()));
 
 }
 
@@ -94,14 +100,37 @@ void spectrum_viewer::file_select_clicked()
 
     if (!iq_filename.isEmpty())
     {
-        //read_iq_file(iq_filename.toStdString(), full_scale, samples, iq_data);
-        input_source_ptr.read_file(iq_filename.toStdString());
+        // use the filename and create the input source for the iq data
+        try {
+            input_source_ptr.read_file(iq_filename.toStdString());
+        }
+        catch (std::exception& ex)
+        {
+            QMessageBox msgBox(QMessageBox::Critical, "Spectrum Viewer Open File error", QString("%1: %2").arg(iq_filename).arg(ex.what()));
+            msgBox.exec();
+        }
     }
 
     int bp = 0;
+}   // end of file_select_clicked
+
+//-----------------------------------------------------------------------------
+void spectrum_viewer::update_fft_size()
+{
+    fft_size = pow(2, ui->fft_size_slider->value());
+    ui->fft_size_le->setText(QString::number(fft_size));
 }
 
-///////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------
+void spectrum_viewer::update_full_scale()
+{
+    full_scale = pow(2, ui->full_scale_slider->value());
+    QString full_scale_text;
+    full_scale_text.sprintf("%d", (uint64_t)full_scale);
+    ui->full_scale_le->setText(full_scale_text);
+}
+
+//-----------------------------------------------------------------------------
 // Destructor
 spectrum_viewer::~spectrum_viewer()
 {
