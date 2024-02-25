@@ -56,6 +56,8 @@ spectrum_viewer::spectrum_viewer(QWidget* parent)
     full_scale = pow(2, ui->full_scale_slider->value());
     ui->full_scale_le->setText(QString::number(full_scale));
 
+    //ui->spectrogram_widget = new QWidget();
+
 
     //-----------------------------------------------------------------------------
     connect(ui->actionOpen_File, SIGNAL(triggered()), this, SLOT(file_select_clicked()));

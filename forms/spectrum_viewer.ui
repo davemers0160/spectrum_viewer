@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1296</width>
+    <width>1227</width>
     <height>870</height>
    </rect>
   </property>
@@ -21,13 +21,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>270</width>
-    <height>525</height>
+    <width>640</width>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>10000</width>
+    <width>100000</width>
     <height>10000</height>
    </size>
   </property>
@@ -140,7 +140,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>44</y>
+      <y>50</y>
       <width>281</width>
       <height>32</height>
      </rect>
@@ -227,13 +227,23 @@
      </item>
     </layout>
    </widget>
+   <widget class="QGraphicsView" name="spectrum_view">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>911</width>
+      <height>801</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1296</width>
+     <width>1227</width>
      <height>23</height>
     </rect>
    </property>
